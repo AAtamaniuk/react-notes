@@ -1,19 +1,24 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Color extends Component {
-  handleClick = (e) => {
-    const {onColorChange, color} = this.props;
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    const { onColorChange, color } = this.props;
     onColorChange(color);
-  };
+  }
 
   render() {
-    const {color, isActive} = this.props;
+    const { color, isActive } = this.props;
     return (
-      <div
+      <button
         className={`Color ${isActive ? 'Color--active' : ''}`}
         color={color}
-        style={{backgroundColor: color}}
+        style={{ backgroundColor: color }}
         onClick={this.handleClick}
       />
     );
@@ -22,9 +27,12 @@ class Color extends Component {
 
 Color.propTypes = {
   color: PropTypes.string.isRequired,
-  onColorChange: PropTypes.func.isRequired
+  onColorChange: PropTypes.func.isRequired,
+  isActive: PropTypes.bool,
 };
 
-Color.defaultProps = {};
+Color.defaultProps = {
+  isActive: false,
+};
 
 export default Color;
