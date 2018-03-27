@@ -5,11 +5,13 @@ import Color from '../Color/Color';
 import './ColorPicker.css';
 
 const COLORS = [
-  '#FF5722',
-  '#CDDC39',
-  '#FFEB3B',
-  '#03A9F4',
-  '#009688',
+  '#FF8783',
+  '#FFCD8B',
+  '#FFFD9D',
+  '#CCD7DB',
+  '#73D8FA',
+  '#9FFEEB',
+  '#CAFC9E',
 ];
 
 const ColorPicker = ({ onColorChange, activeColor }) => (
