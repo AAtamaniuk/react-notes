@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ColorPicker from './ColorPicker';
+import ColorPicker from '../ColorPicker/ColorPicker';
 
 class NoteEditor extends Component {
   constructor(props) {

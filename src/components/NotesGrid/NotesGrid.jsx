@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Masonry from 'masonry-layout';
-import Note from './Note';
+import Note from '../Note/Note';
 
 class NotesGrid extends Component {
   componentDidMount() {

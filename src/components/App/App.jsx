@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Search from './components/Search';
-import NoteEditor from './components/NoteEditor';
-import NotesGrid from './components/NotesGrid';
+import Search from '../Search/Search';
+import NoteEditor from '../NoteEditor/NoteEditor';
+import NotesGrid from '../NotesGrid/NotesGrid';
 import './App.css';
 
 class App extends Component {

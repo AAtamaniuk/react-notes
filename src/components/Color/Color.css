@@ -1,0 +1,18 @@
+.Color {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 2px solid lightslategrey;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.Color:hover {
+  border-color: black;
+}
+
+.Color--active {
+  border-color: black;
+}

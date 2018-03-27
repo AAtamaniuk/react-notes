@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+// Styles
+import './Color.css';
 
 class Color extends Component {
   constructor(props) {

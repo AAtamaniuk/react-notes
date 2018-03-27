@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Color from './Color';
+import Color from '../Color/Color';
 
 const COLORS = [
   '#FF5722',
