@@ -7,20 +7,26 @@ const COLORS = [
   '#CDDC39',
   '#FFEB3B',
   '#03A9F4',
-  '#009688'
+  '#009688',
 ];
 
-const ColorPicker = ({onColorChange, activeColor}) => {
-  const colors = COLORS.map((color, index) =>
-    <Color onColorChange={onColorChange} key={index} color={color} isActive={color === activeColor}/>
-  );
-  return (
-    <div className="ColorPicker">{colors}</div>
-  );
-};
+const ColorPicker = ({ onColorChange, activeColor }) => (
+  <div className="ColorPicker">
+    {
+        COLORS.map(color =>
+          (<Color
+            onColorChange={onColorChange}
+            key={color}
+            color={color}
+            isActive={color === activeColor}
+          />))
+    }
+  </div>
+);
 
 ColorPicker.propTypes = {
-  onColorChange: PropTypes.func.isRequired
+  onColorChange: PropTypes.func.isRequired,
+  activeColor: PropTypes.string.isRequired,
 };
 ColorPicker.defaultProps = {};
 

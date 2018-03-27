@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Search extends Component {
@@ -8,11 +8,11 @@ class Search extends Component {
   }
 
   handleSearchChange(e) {
-    this.props.onSearchChange(e)
+    this.props.onSearchChange(e);
   }
 
   render() {
-    const {value} = this.props;
+    const { value } = this.props;
     return (
       <input
         type="text"
@@ -27,7 +27,7 @@ class Search extends Component {
 
 Search.propTypes = {
   onSearchChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired
+  value: PropTypes.string.isRequired,
 };
 Search.defaultProps = {};
 

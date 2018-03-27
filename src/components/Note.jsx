@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Note = ({color, onDelete, children}) => {
-  const style = {backgroundColor: color};
+const Note = ({ color, onDelete, children }) => {
+  const style = { backgroundColor: color };
   return (
     <div className="Note" style={style}>
-      <span className="Note__delete" onClick={onDelete}> × </span>
+      <button className="Note__delete" onClick={onDelete}> × </button>
       {children}
     </div>
   );
@@ -13,7 +13,8 @@ const Note = ({color, onDelete, children}) => {
 
 Note.propTypes = {
   color: PropTypes.string.isRequired,
-  onDelete: PropTypes.func.isRequired
+  onDelete: PropTypes.func.isRequired,
+  children: PropTypes.string.isRequired,
 };
 Note.defaultProps = {};
 
