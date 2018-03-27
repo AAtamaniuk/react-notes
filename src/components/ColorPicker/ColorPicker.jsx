@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Color from '../Color/Color';
+// Styles
+import './ColorPicker.css';
 
 const COLORS = [
   '#FF5722',

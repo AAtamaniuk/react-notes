@@ -63,8 +63,8 @@ class App extends Component {
     const { searchValue } = this.state;
 
     return (
-      <div className="NotesApp">
-        <h2 className="NotesApp__header">NotesApp</h2>
+      <div className="App">
+        <h2 className="App__header">NotesApp</h2>
         <NoteEditor onNoteAdd={this.handleNoteAdd} />
         <Search onSearchChange={this.handleSearchChange} value={searchValue} />
         <NotesGrid

@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// Style
+import './Note.css';
 
 const Note = ({ color, onDelete, children }) => {
   const style = { backgroundColor: color };

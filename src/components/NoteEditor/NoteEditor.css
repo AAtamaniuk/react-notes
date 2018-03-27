@@ -1,0 +1,64 @@
+.NoteEditor {
+  width: 100%;
+  max-width: 600px;
+  padding: 16px;
+  margin: 16px auto;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+              0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 2px;
+}
+
+.NoteEditor__text-area {
+  width: 100%;
+  resize: none;
+  margin: 5px;
+  font-size: 14px;
+  border: none;
+  font-weight: 300;
+}
+
+.NoteEditor__text-area:focus {
+  outline: 0;
+}
+
+.NoteEditor__controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.NoteEditor__add-button {
+  width: 100px;
+  background-color: #44c767;
+  border-radius: 28px;
+  border: 1px solid #18ab29;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 8px 8px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #2f6627;
+}
+
+.NoteEditor__add-button:hover {
+  background-color: #5cbf2a;
+}
+
+.NoteEditor__add-button:active {
+  position: relative;
+  top: 1px;
+}
+
+.NoteEditor__add-button:focus {
+  outline: 0;
+}
+
+.NoteEditor__add-button:disabled {
+  opacity: 0.5;
+}
+
+.NoteEditor__add-button:disabled:hover {
+  background-color: #44c767;
+  cursor: not-allowed;
+}

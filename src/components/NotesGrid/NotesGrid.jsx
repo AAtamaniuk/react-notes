@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Masonry from 'masonry-layout';
 import Note from '../Note/Note';
+// Style
+import './NotesGrid.css'
 
 class NotesGrid extends Component {
   componentDidMount() {

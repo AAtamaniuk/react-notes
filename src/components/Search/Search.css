@@ -1,0 +1,15 @@
+.Search {
+  display: block;
+  border: 2px solid #000;
+  margin: 0 auto 10px;
+  min-width: 300px;
+  height: 30px;
+  padding: 5px 15px;
+  font-size: 15px;
+  border-radius: 2px;
+}
+
+.Search:focus {
+  outline: none;
+  border-color: chocolate;
+}
