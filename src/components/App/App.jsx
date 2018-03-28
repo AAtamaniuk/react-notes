@@ -15,13 +15,12 @@ class App extends Component {
     this.handleSearchChange = this.handleSearchChange.bind(this);
     this.handleNoteDelete = this.handleNoteDelete.bind(this);
     this.getDisplayedNotes = this.getDisplayedNotes.bind(this);
+    this.clearSearch = this.clearSearch.bind(this);
   }
 
   componentDidMount() {
     const localNotes = JSON.parse(localStorage.getItem('notes'));
-    if (localNotes) {
-      this.setState({ notes: localNotes });
-    }
+    if (localNotes) this.setState({ notes: localNotes });
   }
 
   componentDidUpdate() {
@@ -30,9 +29,7 @@ class App extends Component {
 
   getDisplayedNotes() {
     const { notes, searchValue } = this.state;
-    return (
-      notes.filter(note => note.text.toLowerCase().indexOf(searchValue) !== -1)
-    );
+    return notes.filter(note => note.text.toLowerCase().indexOf(searchValue) !== -1);
   }
 
   handleSearchChange(e) {
@@ -46,12 +43,12 @@ class App extends Component {
   }
 
   handleNoteAdd(newNote) {
-    const newNotes = this.state.notes.slice();
-    newNotes.unshift(newNote);
-    this.setState({
-      notes: newNotes,
-      searchValue: '',
-    });
+    this.setState({ notes: [newNote, ...this.state.notes] });
+    this.clearSearch();
+  }
+
+  clearSearch() {
+    this.setState({ searchValue: '' });
   }
 
   updateLocalStorage() {
