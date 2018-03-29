@@ -31,7 +31,8 @@ class NotesGrid extends Component {
         this.props.notes.map(note => (
           <Note
             key={note.id}
-            onDelete={onNoteDelete.bind(null, note)}
+            id={note.id}
+            onDelete={() => onNoteDelete(note.id)}
             color={note.color}
           >
             {note.text}

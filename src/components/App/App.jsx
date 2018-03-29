@@ -36,10 +36,8 @@ class App extends Component {
     this.setState({ searchValue: e.target.value.toLowerCase() });
   }
 
-  handleNoteDelete(note) {
-    const noteId = note.id;
-    const newNotes = this.state.notes.filter(n => n.id !== noteId);
-    this.setState({ notes: newNotes });
+  handleNoteDelete(noteId) {
+    this.setState({ notes: this.state.notes.filter(n => n.id !== noteId) });
   }
 
   handleNoteAdd(newNote) {
