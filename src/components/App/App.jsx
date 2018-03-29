@@ -23,8 +23,8 @@ class App extends Component {
     if (localNotes) this.setState({ notes: localNotes });
   }
 
-  componentDidUpdate() {
-    this.updateLocalStorage();
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.notes !== this.state.notes) this.updateLocalStorage();
   }
 
   getDisplayedNotes() {
