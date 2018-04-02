@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 // Style
 import './Note.css';
 
-const Note = ({ color, onDelete, children }) => {
+const Note = ({
+  id, color, onDelete, children,
+}) => {
   const style = { backgroundColor: color };
   return (
-    <div className="Note" style={style}>
+    <div className="Note" style={style} id={id} >
       <button className="Note__delete" onClick={onDelete}> × </button>
       {children}
     </div>
@@ -14,6 +16,7 @@ const Note = ({ color, onDelete, children }) => {
 };
 
 Note.propTypes = {
+  id: PropTypes.number.isRequired,
   color: PropTypes.string.isRequired,
   onDelete: PropTypes.func.isRequired,
   children: PropTypes.string.isRequired,
