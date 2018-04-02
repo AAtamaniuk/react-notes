@@ -45,7 +45,11 @@ class NotesGrid extends Component {
 }
 
 NotesGrid.propTypes = {
-  notes: PropTypes.arrayOf(PropTypes.object).isRequired,
+  notes: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    color: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+  })).isRequired,
   onNoteDelete: PropTypes.func.isRequired,
 };
 NotesGrid.defaultProps = {};
