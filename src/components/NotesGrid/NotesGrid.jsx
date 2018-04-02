@@ -1,34 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import Masonry from 'masonry-layout';
+import Masonry from 'react-masonry-component';
+// Components
 import Note from '../Note/Note';
 // Style
 import './NotesGrid.css';
 
-class NotesGrid extends Component {
-  componentDidMount() {
-    this.msnry = new Masonry(this.grid, {
-      itemSelector: '.Note',
-      columnWidth: 200,
-      gutter: 10,
-      isFitWidth: true,
-    });
-  }
+const masonryOptions = {
+  itemSelector: '.Note',
+  columnWidth: 200,
+  gutter: 10,
+  isFitWidth: true,
+};
 
-  componentDidUpdate(prevProps) {
-    if (this.props.notes.length !== prevProps.notes.length) {
-      this.msnry.reloadItems();
-      this.msnry.layout();
-    }
-  }
-
-  render() {
-    const { onNoteDelete } = this.props;
-
-    return (
-      <div className="NotesGrid" ref={(grid) => { this.grid = grid; }}>
-        {
-        this.props.notes.map(note => (
+function NotesGrid({ notes, onNoteDelete }) {
+  return (
+    <Masonry className="NotesGrid" options={masonryOptions} >
+      {
+        notes.map(note => (
           <Note
             key={note.id}
             id={note.id}
@@ -37,11 +26,10 @@ class NotesGrid extends Component {
           >
             {note.text}
           </Note>
-          ))
+        ))
       }
-      </div>
-    );
-  }
+    </Masonry>
+  );
 }
 
 NotesGrid.propTypes = {
